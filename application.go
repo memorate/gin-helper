@@ -1,7 +1,6 @@
 package gin_helper
 
 import (
-	"gin-helper/restful"
 	"github.com/gin-gonic/gin"
 	"sync"
 )
@@ -35,7 +34,7 @@ func (g *GinInstance) registerSchema(serverName string, structPtr interface{}) {
 
 func RegisterUrlPatterns(engine *gin.Engine) error {
 	for _, schema := range ginInstance.schemas {
-		if routes, e := restful.GetUrlPatterns(schema.schema); e != nil {
+		if routes, e := GetUrlPatterns(schema.schema); e != nil {
 			return e
 		} else {
 			for _, route := range routes {

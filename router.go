@@ -1,4 +1,4 @@
-package restful
+package gin_helper
 
 import (
 	"fmt"
